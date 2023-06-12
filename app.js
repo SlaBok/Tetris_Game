@@ -104,13 +104,14 @@ document.addEventListener('DOMContentLoaded', () => {
   
   //freeze function
   function freeze() {
-    if(current.some(index => squares[currentPosition + index + width].classList.contains('taken'))) {
+    if(current.some(index => squares[currentPosition + index + width].classList.contains('taken'))) 
+    {
       current.forEach(index => squares[currentPosition + index].classList.add('taken'))
       //start new tetromino
       random = nextRandom
       nextRandom = Math.floor(Math.random() * theTetrominoes.length)
       current = theTetrominoes[random][0]
-      currentPosition =4
+      currentPosition = 4
       draw()
       displayShape()
       addScore()
